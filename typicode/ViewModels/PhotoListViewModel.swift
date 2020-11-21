@@ -60,7 +60,6 @@ class PhotoListViewModel {
         let savedPhotos = storage.fetchObjects(entity: PhotoCDM.self)
         for sp in savedPhotos {
             if photos.contains(where: { $0.id == sp.id }) {
-                print("delete", sp.id)
                 storage.managedObjectContext().delete(sp)
             }
         }

@@ -28,9 +28,6 @@
 		170CB4812569255300092C50 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4802569255300092C50 /* PhotoListViewModel.swift */; };
 		170CB4852569346400092C50 /* PhotoTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */; };
 		170CB488256936D900092C50 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB487256936D900092C50 /* UIViewController+Extension.swift */; };
-		170CB48B256937BF00092C50 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB48A256937BF00092C50 /* ImageLoader.swift */; };
-		170CB48F2569382800092C50 /* ImageLoaderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB48E2569382800092C50 /* ImageLoaderCache.swift */; };
-		170CB4932569385300092C50 /* ImageLoaderTaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4922569385300092C50 /* ImageLoaderTaskManager.swift */; };
 		170CB496256938BE00092C50 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB495256938BE00092C50 /* UIImageView+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,9 +55,6 @@
 		170CB4802569255300092C50 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
 		170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewDataSource.swift; sourceTree = "<group>"; };
 		170CB487256936D900092C50 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		170CB48A256937BF00092C50 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		170CB48E2569382800092C50 /* ImageLoaderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderCache.swift; sourceTree = "<group>"; };
-		170CB4922569385300092C50 /* ImageLoaderTaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderTaskManager.swift; sourceTree = "<group>"; };
 		170CB495256938BE00092C50 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,7 +115,6 @@
 				170CB42A2568F16600092C50 /* NetworkTaskManager.swift */,
 				170CB42D2568F19D00092C50 /* Endpoint.swift */,
 				170CB4302568F1F900092C50 /* Result.swift */,
-				170CB48D2569380A00092C50 /* ImageLoader */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -192,16 +185,6 @@
 				170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */,
 			);
 			path = DataSources;
-			sourceTree = "<group>";
-		};
-		170CB48D2569380A00092C50 /* ImageLoader */ = {
-			isa = PBXGroup;
-			children = (
-				170CB48A256937BF00092C50 /* ImageLoader.swift */,
-				170CB48E2569382800092C50 /* ImageLoaderCache.swift */,
-				170CB4922569385300092C50 /* ImageLoaderTaskManager.swift */,
-			);
-			path = ImageLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,15 +259,12 @@
 			files = (
 				170CB47625691C0600092C50 /* PhotoTableViewCell.swift in Sources */,
 				170CB4682569074200092C50 /* Photo.swift in Sources */,
-				170CB48B256937BF00092C50 /* ImageLoader.swift in Sources */,
-				170CB48F2569382800092C50 /* ImageLoaderCache.swift in Sources */,
 				170CB496256938BE00092C50 /* UIImageView+Extension.swift in Sources */,
 				170CB42E2568F19D00092C50 /* Endpoint.swift in Sources */,
 				170CB4272568F13800092C50 /* NetworkService.swift in Sources */,
 				170CB47A2569230000092C50 /* PhotoViewModel.swift in Sources */,
 				170CB42B2568F16600092C50 /* NetworkTaskManager.swift in Sources */,
 				170CB4352568F36700092C50 /* PhotosEndpoint.swift in Sources */,
-				170CB4932569385300092C50 /* ImageLoaderTaskManager.swift in Sources */,
 				170CB488256936D900092C50 /* UIViewController+Extension.swift in Sources */,
 				170CB46C256907E700092C50 /* CodingUserInfoKey+Extension.swift in Sources */,
 				170CB4112568EE4500092C50 /* PhotosViewController.swift in Sources */,

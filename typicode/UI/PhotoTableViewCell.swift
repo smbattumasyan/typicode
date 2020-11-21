@@ -12,13 +12,14 @@ class PhotoTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typiImageView: UIImageView!
+    private var task: URLSessionDataTask?
     
     static let id = "photoCellIdentifier"
-    var thumbnailUrl: String = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        configureViews()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -29,13 +30,24 @@ class PhotoTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        let cc = ImageLoaderTaskManager().currentTasksCount
-        print(cc)
+        
+        task?.cancel()
+        task = nil
     }
     
     func setup(_ photo: PhotoViewModel.Output) {
-        self.titleLabel.text = photo.title
-        self.typiImageView.setImage(fromUrl: photo.thumbnailUrl)
-        thumbnailUrl = photo.thumbnailUrl
+        titleLabel.text = photo.title
+        if task == nil {
+            task = typiImageView.downloadImage(from: photo.thumbnailUrl)
+        }
     }
+    
+    private func configureViews() {
+        typiImageView.layer.cornerRadius = UIConfig.typiCornerRadius
+        typiImageView.clipsToBounds = true
+    }
+}
+
+fileprivate struct UIConfig {
+    static let typiCornerRadius = CGFloat(8)
 }
