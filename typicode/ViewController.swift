@@ -8,12 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        NetworkService.shared.request(PhotosEndpoint.get(page: 1)) { (result: Result<[Photo]>) in
+            switch result {
+            case .success(let photos):
+                print(photos)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
-
-
 }
 
