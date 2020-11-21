@@ -21,15 +21,14 @@ class PhotosViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel = PhotoListViewModel(self)
-        tableViewDataSource = PhotoTableViewDataSource(self.viewModel)
+        tableViewDataSource = PhotoTableViewDataSource(self.viewModel, tableView: tableView)
         tableView.dataSource = tableViewDataSource
-        viewModel.parsePhotosJson()
+        viewModel.parsePhotosJson(page: 1)
     }
 }
 
 extension PhotosViewController: PhotoListViewModelDelegate {
     func parsePhotosSuccess() {
-        self.tableView.reloadData()
     }
     
     func parsePhotosFailedWithMessage(_ message: String) {

@@ -85,4 +85,19 @@ class CoreDataStorage {
             }
         }
     }
+    
+    func fetchObjects<T: NSManagedObject>(entity: T.Type) -> [T] {
+        let request = NSFetchRequest<T>(entityName: String(describing: entity))
+        do {
+            return try persistentContainer.viewContext.fetch(request)
+        }
+        catch let error as NSError {
+            print(error.debugDescription)
+            return [T]()
+        }
+    }
+    
+    func removeObject(_ object: NSManagedObject) {
+        persistentContainer.viewContext.delete(object)
+    }
 }

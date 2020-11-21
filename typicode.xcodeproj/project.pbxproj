@@ -19,7 +19,6 @@
 		170CB42E2568F19D00092C50 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB42D2568F19D00092C50 /* Endpoint.swift */; };
 		170CB4312568F1F900092C50 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4302568F1F900092C50 /* Result.swift */; };
 		170CB4352568F36700092C50 /* PhotosEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4342568F36700092C50 /* PhotosEndpoint.swift */; };
-		170CB4392568F5F700092C50 /* PhotoM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4382568F5F700092C50 /* PhotoM.swift */; };
 		170CB4642569060300092C50 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4632569060300092C50 /* CoreDataStorage.swift */; };
 		170CB4682569074200092C50 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4672569074100092C50 /* Photo.swift */; };
 		170CB46C256907E700092C50 /* CodingUserInfoKey+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB46B256907E700092C50 /* CodingUserInfoKey+Extension.swift */; };
@@ -50,7 +49,6 @@
 		170CB42D2568F19D00092C50 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		170CB4302568F1F900092C50 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		170CB4342568F36700092C50 /* PhotosEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosEndpoint.swift; sourceTree = "<group>"; };
-		170CB4382568F5F700092C50 /* PhotoM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoM.swift; sourceTree = "<group>"; };
 		170CB4632569060300092C50 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		170CB4672569074100092C50 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		170CB46B256907E700092C50 /* CodingUserInfoKey+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Extension.swift"; sourceTree = "<group>"; };
@@ -96,7 +94,8 @@
 		170CB40B2568EE4400092C50 /* typicode */ = {
 			isa = PBXGroup;
 			children = (
-				170CB4832569343100092C50 /* DataSources */,
+				170CB40C2568EE4400092C50 /* AppDelegate.swift */,
+				170CB40E2568EE4400092C50 /* SceneDelegate.swift */,
 				170CB47C2569234500092C50 /* GlobalProtocols */,
 				170CB46A256907C300092C50 /* Extensions */,
 				170CB4622569053A00092C50 /* Persistence */,
@@ -104,8 +103,7 @@
 				170CB4332568F34200092C50 /* Endpoints */,
 				170CB4372568F5D200092C50 /* Models */,
 				170CB47825691F9D00092C50 /* ViewModels */,
-				170CB40C2568EE4400092C50 /* AppDelegate.swift */,
-				170CB40E2568EE4400092C50 /* SceneDelegate.swift */,
+				170CB4832569343100092C50 /* DataSources */,
 				170CB46F25691A0800092C50 /* UI */,
 				170CB4122568EE4500092C50 /* Main.storyboard */,
 				170CB4182568EE4700092C50 /* Assets.xcassets */,
@@ -139,7 +137,6 @@
 		170CB4372568F5D200092C50 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				170CB4382568F5F700092C50 /* PhotoM.swift */,
 				170CB4672569074100092C50 /* Photo.swift */,
 			);
 			path = Models;
@@ -157,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				170CB46B256907E700092C50 /* CodingUserInfoKey+Extension.swift */,
+				170CB487256936D900092C50 /* UIViewController+Extension.swift */,
+				170CB495256938BE00092C50 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,8 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */,
-				170CB487256936D900092C50 /* UIViewController+Extension.swift */,
-				170CB495256938BE00092C50 /* UIImageView+Extension.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -288,7 +285,6 @@
 				170CB42B2568F16600092C50 /* NetworkTaskManager.swift in Sources */,
 				170CB4352568F36700092C50 /* PhotosEndpoint.swift in Sources */,
 				170CB4932569385300092C50 /* ImageLoaderTaskManager.swift in Sources */,
-				170CB4392568F5F700092C50 /* PhotoM.swift in Sources */,
 				170CB488256936D900092C50 /* UIViewController+Extension.swift in Sources */,
 				170CB46C256907E700092C50 /* CodingUserInfoKey+Extension.swift in Sources */,
 				170CB4112568EE4500092C50 /* PhotosViewController.swift in Sources */,
@@ -447,12 +443,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = typicode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.smbat.typicode.typicode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smbat.typicode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -465,12 +462,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = typicode/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.smbat.typicode.typicode;
+				PRODUCT_BUNDLE_IDENTIFIER = com.smbat.typicode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

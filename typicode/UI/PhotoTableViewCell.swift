@@ -14,6 +14,7 @@ class PhotoTableViewCell: UITableViewCell {
     @IBOutlet weak var typiImageView: UIImageView!
     
     static let id = "photoCellIdentifier"
+    var thumbnailUrl: String = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,8 +27,15 @@ class PhotoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        let cc = ImageLoaderTaskManager().currentTasksCount
+        print(cc)
+    }
+    
     func setup(_ photo: PhotoViewModel.Output) {
         self.titleLabel.text = photo.title
         self.typiImageView.setImage(fromUrl: photo.thumbnailUrl)
+        thumbnailUrl = photo.thumbnailUrl
     }
 }

@@ -8,13 +8,11 @@
 import Foundation
 
 protocol Endpoint {
-    
     var baseUrl: String { get }
     var httpMethod: HTTPMethod { get }
     var path: String { get }
     var queryItems: [URLQueryItem]? { get }
     var urlRequest: URLRequest? { get }
-    
 }
 
 // MARK: - Default properties

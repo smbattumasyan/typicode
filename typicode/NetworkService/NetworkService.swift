@@ -38,7 +38,7 @@ extension NetworkService {
         
         // First, check cache
         if let cachedData = cache.cachedResponse(for: request)?.data {
-            DispatchQueue.main.async { completion(self.decodedWithManagedObjectContext(T.self, data: cachedData)) }
+            DispatchQueue.main.async { completion(self.decoded(T.self, data: cachedData)) }
             return
         }
         
@@ -58,11 +58,10 @@ extension NetworkService {
             }
             
             guard let strongSelf = self else { return }
-            DispatchQueue.main.async { completion(strongSelf.decodedWithManagedObjectContext(T.self, data: data)) }
+            DispatchQueue.main.async { completion(strongSelf.decoded(T.self, data: data)) }
         }
         
         taskManager.add(task, forRequest: request)
-        
         task.resume()
     }
     

@@ -103,97 +103,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6E70778B-CF0F-417D-BD63-EDE60D6D747C"
-            shouldBeEnabled = "Yes"
+            uuid = "D8788688-6B4C-43AD-86F6-048DCFE07A00"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "typicode/NetworkService/NetworkService.swift"
+            filePath = "typicode/DataSources/PhotoTableViewDataSource.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "request(_:completion:)"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6E70778B-CF0F-417D-BD63-EDE60D6D747C - ac6ed26de3813aca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in typicode.NetworkService.request&lt;A where A: Swift.Decodable&gt;(_: typicode.Endpoint, completion: (typicode.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "typicode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/smbattumasyan/workspace/typicode/typicode/NetworkService/NetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "920">
-               </Location>
-               <Location
-                  uuid = "6E70778B-CF0F-417D-BD63-EDE60D6D747C - 4b0615a6ed5c567"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #3 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in typicode.NetworkService.request&lt;A where A: Swift.Decodable&gt;(_: typicode.Endpoint, completion: (typicode.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "typicode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/smbattumasyan/workspace/typicode/typicode/NetworkService/NetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "130">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F6FE5BB9-9DD6-4272-B119-6168E67CA3B2"
+            uuid = "081B4C92-B7A1-40D8-806D-29B4D109D396"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "typicode/NetworkService/NetworkService.swift"
+            filePath = "typicode/NetworkService/ImageLoader/ImageLoaderTaskManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "request(_:completion:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "cancelTask(forKey:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F6FE5BB9-9DD6-4272-B119-6168E67CA3B2 - ac6ed26de3813537"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in typicode.NetworkService.request&lt;A where A: Swift.Decodable&gt;(_: typicode.Endpoint, completion: (typicode.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "typicode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/smbattumasyan/workspace/typicode/typicode/NetworkService/NetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1389">
-               </Location>
-               <Location
-                  uuid = "F6FE5BB9-9DD6-4272-B119-6168E67CA3B2 - 278c5b98267c709b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 () -&gt; () in closure #3 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in typicode.NetworkService.request&lt;A where A: Swift.Decodable&gt;(_: typicode.Endpoint, completion: (typicode.Result&lt;A&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "typicode"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/smbattumasyan/workspace/typicode/typicode/NetworkService/NetworkService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "106">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7B2210C-783D-4DDA-AD5A-99610227F95C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "typicode/NetworkService/ImageLoader/ImageLoaderTaskManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "removeTask(forKey:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

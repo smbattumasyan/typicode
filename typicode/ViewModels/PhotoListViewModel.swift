@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol PhotoListViewModelDelegate: NSObject {
     func parsePhotosSuccess()
@@ -26,29 +27,42 @@ class PhotoListViewModel {
         photos = []
     }
     
-    func parsePhotosJson() {
-        NetworkService.shared.request(PhotosEndpoint.get(page: 1)) { (result: Result<[Photo]>) in
+    func parsePhotosJson(page: Int) {
+        NetworkService.shared.request(PhotosEndpoint.get(page: page)) { (result: Result<[Photo]>) in
             switch result {
             case .success(let photos):
                 self.photos = photos
-                print(photos)
+                self.deleteOldObjects(photos: photos)
+                self.savePhotos(photos)
             case .failure(let error):
                 print(error.localizedDescription)
                 self.delegate?.parsePhotosFailedWithMessage(error.localizedDescription)
             }
         }
-        
-        CoreDataStorage.shared.clearStorage(forEntity: "Photo")
+    }
+    
+    private func savePhotos(_ photos: [Photo]) {
+        let moc = CoreDataStorage.shared.managedObjectContext()
+        for photo in photos {
+            let entity = NSEntityDescription.entity(forEntityName: "PhotoCDM", in: moc)
+            let photoCDM = NSManagedObject(entity: entity!, insertInto: moc) as? PhotoCDM
+            photoCDM?.albumId = photo.albumId
+            photoCDM?.id = photo.id
+            photoCDM?.title = photo.title
+            photoCDM?.url = photo.url
+            photoCDM?.thumbnailUrl = photo.thumbnailUrl
+        }
         CoreDataStorage.shared.saveContext()
     }
     
-    func photosCount() -> Int {
-        return self.photos.count
-    }
-    
-    func photo(atIndex index: Int) -> PhotoViewModel.Output {
-        let photoViewModel = PhotoViewModel()
-        let input = PhotoViewModel.Input(photo: photos[index])
-        return photoViewModel.transform(input)
+    private func deleteOldObjects(photos: [Photo]) {
+        let storage = CoreDataStorage.shared
+        let savedPhotos = storage.fetchObjects(entity: PhotoCDM.self)
+        for sp in savedPhotos {
+            if photos.contains(where: { $0.id == sp.id }) {
+                print("delete", sp.id)
+                storage.managedObjectContext().delete(sp)
+            }
+        }
     }
 }

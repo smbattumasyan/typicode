@@ -9,7 +9,7 @@ import Foundation
 
 class PhotoViewModel: ViewModelType {
     struct Input {
-        let photo: Photo
+        let photo: PhotoCDM
     }
     
     struct Output {
