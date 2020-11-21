@@ -36,6 +36,7 @@ class Photo: NSManagedObject, Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         albumId = try container.decode(Int64.self, forKey: .albumId)
         id = try container.decode(Int64.self, forKey: .id)
+        title = try container.decode(String.self, forKey: .title)
         url = try container.decode(String.self, forKey: .url)
         thumbnailUrl = try container.decode(String.self, forKey: .thumbnailUrl)
     }

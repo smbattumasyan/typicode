@@ -27,6 +27,7 @@
 		170CB47A2569230000092C50 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4792569230000092C50 /* PhotoViewModel.swift */; };
 		170CB47E2569237800092C50 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB47D2569237800092C50 /* ViewModelType.swift */; };
 		170CB4812569255300092C50 /* PhotoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4802569255300092C50 /* PhotoListViewModel.swift */; };
+		170CB4852569346400092C50 /* PhotoTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		170CB4792569230000092C50 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		170CB47D2569237800092C50 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		170CB4802569255300092C50 /* PhotoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewModel.swift; sourceTree = "<group>"; };
+		170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		170CB40B2568EE4400092C50 /* typicode */ = {
 			isa = PBXGroup;
 			children = (
+				170CB4832569343100092C50 /* DataSources */,
 				170CB47C2569234500092C50 /* GlobalProtocols */,
 				170CB46A256907C300092C50 /* Extensions */,
 				170CB4622569053A00092C50 /* Persistence */,
@@ -173,6 +176,14 @@
 			path = GlobalProtocols;
 			sourceTree = "<group>";
 		};
+		170CB4832569343100092C50 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,6 +265,7 @@
 				170CB46C256907E700092C50 /* CodingUserInfoKey+Extension.swift in Sources */,
 				170CB4112568EE4500092C50 /* PhotosViewController.swift in Sources */,
 				170CB4812569255300092C50 /* PhotoListViewModel.swift in Sources */,
+				170CB4852569346400092C50 /* PhotoTableViewDataSource.swift in Sources */,
 				170CB40D2568EE4400092C50 /* AppDelegate.swift in Sources */,
 				170CB4642569060300092C50 /* CoreDataStorage.swift in Sources */,
 				170CB47E2569237800092C50 /* ViewModelType.swift in Sources */,
