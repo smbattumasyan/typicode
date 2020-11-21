@@ -28,6 +28,6 @@ class PhotoTableViewCell: UITableViewCell {
     
     func setup(_ photo: PhotoViewModel.Output) {
         self.titleLabel.text = photo.title
+        self.typiImageView.setImage(fromUrl: photo.thumbnailUrl)
     }
-
 }

@@ -33,5 +33,6 @@ extension PhotosViewController: PhotoListViewModelDelegate {
     }
     
     func parsePhotosFailedWithMessage(_ message: String) {
+        showAlert("Error", message: message)
     }
 }

@@ -26,12 +26,15 @@ extension PhotosEndpoint: Endpoint {
     
     var path: String {
         switch self {
-        case .get (_):
+        case .get:
             return "/photos"
         }
     }
     
     var queryItems: [URLQueryItem]? {
-        return [URLQueryItem(name: "_page", value: "1")]
+        switch self {
+        case .get(let page):
+            return [URLQueryItem(name: "_page", value: "\(page)"), URLQueryItem(name: "_limit", value: "20")]
+        }
     }
 }
