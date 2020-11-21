@@ -38,7 +38,7 @@ extension NetworkService {
         
         // First, check cache
         if let cachedData = cache.cachedResponse(for: request)?.data {
-            DispatchQueue.main.async { completion(self.decoded(T.self, data: cachedData)) }
+            DispatchQueue.main.async { completion(self.decodedWithManagedObjectContext(T.self, data: cachedData)) }
             return
         }
         
@@ -58,7 +58,7 @@ extension NetworkService {
             }
             
             guard let strongSelf = self else { return }
-            DispatchQueue.main.async { completion(strongSelf.decoded(T.self, data: data)) }
+            DispatchQueue.main.async { completion(strongSelf.decodedWithManagedObjectContext(T.self, data: data)) }
         }
         
         taskManager.add(task, forRequest: request)
@@ -75,6 +75,20 @@ extension NetworkService {
 // MARK: - Decoding
 private extension NetworkService {
     func decoded<T: Decodable>(_ type: T.Type, data: Data) -> Result<T> {
+        do {
+            let object = try decoder.decode(T.self, from: data)
+            return .success(object)
+        } catch {
+            return .failure(NetworkError.decodingFailed)
+        }
+    }
+    
+    func decodedWithManagedObjectContext<T: Decodable>(_ type: T.Type, data: Data) -> Result<T> {
+        let managedObjectContext = CoreDataStorage.shared.managedObjectContext()
+        guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext else {
+            fatalError("Failed to retrieve managed object context Key")
+        }
+        decoder.userInfo[codingUserInfoKeyManagedObjectContext] = managedObjectContext
         do {
             let object = try decoder.decode(T.self, from: data)
             return .success(object)

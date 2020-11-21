@@ -19,7 +19,10 @@
 		170CB42E2568F19D00092C50 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB42D2568F19D00092C50 /* Endpoint.swift */; };
 		170CB4312568F1F900092C50 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4302568F1F900092C50 /* Result.swift */; };
 		170CB4352568F36700092C50 /* PhotosEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4342568F36700092C50 /* PhotosEndpoint.swift */; };
-		170CB4392568F5F700092C50 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4382568F5F700092C50 /* Photo.swift */; };
+		170CB4392568F5F700092C50 /* PhotoM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4382568F5F700092C50 /* PhotoM.swift */; };
+		170CB4642569060300092C50 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4632569060300092C50 /* CoreDataStorage.swift */; };
+		170CB4682569074200092C50 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4672569074100092C50 /* Photo.swift */; };
+		170CB46C256907E700092C50 /* CodingUserInfoKey+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB46B256907E700092C50 /* CodingUserInfoKey+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +40,10 @@
 		170CB42D2568F19D00092C50 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		170CB4302568F1F900092C50 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		170CB4342568F36700092C50 /* PhotosEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosEndpoint.swift; sourceTree = "<group>"; };
-		170CB4382568F5F700092C50 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		170CB4382568F5F700092C50 /* PhotoM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoM.swift; sourceTree = "<group>"; };
+		170CB4632569060300092C50 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		170CB4672569074100092C50 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		170CB46B256907E700092C50 /* CodingUserInfoKey+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CodingUserInfoKey+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,8 @@
 		170CB40B2568EE4400092C50 /* typicode */ = {
 			isa = PBXGroup;
 			children = (
+				170CB46A256907C300092C50 /* Extensions */,
+				170CB4622569053A00092C50 /* Persistence */,
 				170CB4252568F11000092C50 /* NetworkService */,
 				170CB4332568F34200092C50 /* Endpoints */,
 				170CB4372568F5D200092C50 /* Models */,
@@ -107,9 +115,26 @@
 		170CB4372568F5D200092C50 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				170CB4382568F5F700092C50 /* Photo.swift */,
+				170CB4382568F5F700092C50 /* PhotoM.swift */,
+				170CB4672569074100092C50 /* Photo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		170CB4622569053A00092C50 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				170CB4632569060300092C50 /* CoreDataStorage.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		170CB46A256907C300092C50 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				170CB46B256907E700092C50 /* CodingUserInfoKey+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,13 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170CB4682569074200092C50 /* Photo.swift in Sources */,
 				170CB42E2568F19D00092C50 /* Endpoint.swift in Sources */,
 				170CB4272568F13800092C50 /* NetworkService.swift in Sources */,
 				170CB42B2568F16600092C50 /* NetworkTaskManager.swift in Sources */,
 				170CB4352568F36700092C50 /* PhotosEndpoint.swift in Sources */,
-				170CB4392568F5F700092C50 /* Photo.swift in Sources */,
+				170CB4392568F5F700092C50 /* PhotoM.swift in Sources */,
+				170CB46C256907E700092C50 /* CodingUserInfoKey+Extension.swift in Sources */,
 				170CB4112568EE4500092C50 /* ViewController.swift in Sources */,
 				170CB40D2568EE4400092C50 /* AppDelegate.swift in Sources */,
+				170CB4642569060300092C50 /* CoreDataStorage.swift in Sources */,
 				170CB4172568EE4500092C50 /* typicode.xcdatamodeld in Sources */,
 				170CB4312568F1F900092C50 /* Result.swift in Sources */,
 				170CB40F2568EE4500092C50 /* SceneDelegate.swift in Sources */,
