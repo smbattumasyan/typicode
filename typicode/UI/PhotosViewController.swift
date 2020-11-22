@@ -23,7 +23,16 @@ class PhotosViewController: UIViewController {
         viewModel = PhotoListViewModel(self)
         tableViewDataSource = PhotoTableViewDataSource(self.viewModel, tableView: tableView)
         tableView.dataSource = tableViewDataSource
-        viewModel.parsePhotosJson(page: 1)
+        viewModel.loadPhotos(page: 1)
+    }
+}
+
+extension PhotosViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = PhotoPreviewViewController.storyboardInstance {
+            vc.viewModelOutput = tableViewDataSource.photoViewModel(at: indexPath)
+            present(vc, animated: true, completion: nil)
+        }
     }
 }
 

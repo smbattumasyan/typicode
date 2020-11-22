@@ -9,15 +9,20 @@ import UIKit
 import CoreData
 
 class PhotoTableViewDataSource: NSObject, UITableViewDataSource, NSFetchedResultsControllerDelegate {
+    
+    // MARK: - Properties
     let viewModel: PhotoListViewModel
     let tableView: UITableView!
+    
+    // MARK: - Private properties
+    private let itemsLimit = 20
     
     init(_ viewModel: PhotoListViewModel, tableView: UITableView) {
         self.viewModel = viewModel
         self.tableView = tableView
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table view data source and delegate
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
@@ -28,19 +33,29 @@ class PhotoTableViewDataSource: NSObject, UITableViewDataSource, NSFetchedResult
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PhotoTableViewCell.id, for: indexPath) as! PhotoTableViewCell
-        let photo = fetchedResultsController.object(at: indexPath)
-        let photoViewModel = PhotoViewModel()
-        let input = PhotoViewModel.Input(photo: photo)
-        cell.setup(photoViewModel.transform(input))
+        let photo = photoViewModel(at: indexPath)
+        cell.setup(photo)
         let objCount = fetchedResultsController.fetchedObjects?.count ?? 0
         if indexPath.row == objCount - 3 {
-            let page = objCount / 20 + 1
-            viewModel.parsePhotosJson(page: page)
+            let page = objCount / itemsLimit + 1
+            viewModel.loadPhotos(page: page)
         }
         return cell
     }
     
-    // MARK: - NSFetchedResultsControllerDelegate
+    // MARK: - Public Methods
+    
+    /*
+     Transform PhotoCoreDataModel to PhotoViewModel Output
+     */
+    func photoViewModel(at indexPath: IndexPath) -> PhotoViewModel.Output {
+        let photo = fetchedResultsController.object(at: indexPath)
+        let photoViewModel = PhotoViewModel()
+        let input = PhotoViewModel.Input(photo: photo)
+        return photoViewModel.transform(input)
+    }
+    
+    // MARK: - NSFetchedResultsController and Delegate
     lazy var fetchedResultsController: NSFetchedResultsController<PhotoCDM> = {
         // Initialize Fetch Request
         let fetchRequest:NSFetchRequest<PhotoCDM> = PhotoCDM.fetchRequest()
@@ -65,6 +80,8 @@ class PhotoTableViewDataSource: NSObject, UITableViewDataSource, NSFetchedResult
         }
         return fetchedResultsController
     }()
+    
+    // NSFetchedResultsControllerDelegate
     
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()

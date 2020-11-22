@@ -59,6 +59,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="orL-Rz-29A"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -78,8 +81,63 @@
             </objects>
             <point key="canvasLocation" x="138.40000000000001" y="61.619190404797607"/>
         </scene>
+        <!--Photo Preview View Controller-->
+        <scene sceneID="C8J-nk-NoB">
+            <objects>
+                <viewController storyboardIdentifier="PhotoPreviewViewController" id="gYU-2u-KY0" customClass="PhotoPreviewViewController" customModule="typicode" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7DK-uo-iPi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rmr-Oi-MRl">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NE2-v1-Ai3">
+                                <rect key="frame" x="330" y="25" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4XP-bS-XA6"/>
+                                    <constraint firstAttribute="width" constant="20" id="r0d-fA-dl9"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="close-button"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="gYU-2u-KY0" eventType="touchUpInside" id="LuV-nz-I9f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="BIL-rv-QN9">
+                                <rect key="frame" x="16" y="70" width="343" height="209"/>
+                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dpF-pN-5P3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dpF-pN-5P3" firstAttribute="bottom" secondItem="BIL-rv-QN9" secondAttribute="bottom" constant="388" id="5AZ-1u-Yju"/>
+                            <constraint firstItem="NE2-v1-Ai3" firstAttribute="top" secondItem="dpF-pN-5P3" secondAttribute="top" constant="25" id="98I-nV-AdW"/>
+                            <constraint firstItem="Rmr-Oi-MRl" firstAttribute="bottom" secondItem="dpF-pN-5P3" secondAttribute="bottom" id="N2g-3K-jwV"/>
+                            <constraint firstItem="Rmr-Oi-MRl" firstAttribute="top" secondItem="dpF-pN-5P3" secondAttribute="top" id="OhT-fW-3s0"/>
+                            <constraint firstItem="dpF-pN-5P3" firstAttribute="trailing" secondItem="BIL-rv-QN9" secondAttribute="trailing" constant="16" id="cbv-qT-vlG"/>
+                            <constraint firstItem="BIL-rv-QN9" firstAttribute="leading" secondItem="dpF-pN-5P3" secondAttribute="leading" constant="16" id="gSK-iT-Dmo"/>
+                            <constraint firstItem="dpF-pN-5P3" firstAttribute="trailing" secondItem="NE2-v1-Ai3" secondAttribute="trailing" constant="25" id="o9o-mZ-U0P"/>
+                            <constraint firstItem="BIL-rv-QN9" firstAttribute="top" secondItem="NE2-v1-Ai3" secondAttribute="bottom" constant="25" id="ucq-nu-eSg"/>
+                            <constraint firstItem="Rmr-Oi-MRl" firstAttribute="leading" secondItem="dpF-pN-5P3" secondAttribute="leading" id="wrM-5I-IU6"/>
+                            <constraint firstItem="Rmr-Oi-MRl" firstAttribute="trailing" secondItem="dpF-pN-5P3" secondAttribute="trailing" id="ynd-MH-VQw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewImageView" destination="Rmr-Oi-MRl" id="VT6-GU-erQ"/>
+                        <outlet property="titleLabel" destination="BIL-rv-QN9" id="nRG-OE-1lP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uni-gM-71H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="57.121439280359823"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="close-button" width="170" height="170"/>
         <image name="default-image" width="800" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

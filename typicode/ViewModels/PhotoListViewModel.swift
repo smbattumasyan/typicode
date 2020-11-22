@@ -27,7 +27,13 @@ class PhotoListViewModel {
         photos = []
     }
     
-    func parsePhotosJson(page: Int) {
+    /*
+     Load photos json by page,
+     decodes response data to Photo model,
+     remove data that contains in database,
+     save new data to database
+     */
+    func loadPhotos(page: Int) {
         NetworkService.shared.request(PhotosEndpoint.get(page: page)) { (result: Result<[Photo]>) in
             switch result {
             case .success(let photos):
@@ -41,6 +47,10 @@ class PhotoListViewModel {
         }
     }
     
+    /*
+     Creates PhotoCDM entityDescription
+     Save decoded photos to CoreData
+     */
     private func savePhotos(_ photos: [Photo]) {
         let moc = CoreDataStorage.shared.managedObjectContext()
         for photo in photos {
@@ -55,6 +65,9 @@ class PhotoListViewModel {
         CoreDataStorage.shared.saveContext()
     }
     
+    /*
+     Delete compared old photos from CoreData
+     */
     private func deleteOldObjects(photos: [Photo]) {
         let storage = CoreDataStorage.shared
         let savedPhotos = storage.fetchObjects(entity: PhotoCDM.self)

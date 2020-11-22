@@ -29,6 +29,9 @@
 		170CB4852569346400092C50 /* PhotoTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */; };
 		170CB488256936D900092C50 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB487256936D900092C50 /* UIViewController+Extension.swift */; };
 		170CB496256938BE00092C50 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170CB495256938BE00092C50 /* UIImageView+Extension.swift */; };
+		1731DBAE256A547C0079B43E /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1731DBAD256A547C0079B43E /* StoryboardName.swift */; };
+		1731DBB1256A548D0079B43E /* StoryboardInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1731DBB0256A548D0079B43E /* StoryboardInstance.swift */; };
+		17992C70256A4FF500E01F5E /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17992C6F256A4FF500E01F5E /* PhotoPreviewViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTableViewDataSource.swift; sourceTree = "<group>"; };
 		170CB487256936D900092C50 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		170CB495256938BE00092C50 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		1731DBAD256A547C0079B43E /* StoryboardName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardName.swift; sourceTree = "<group>"; };
+		1731DBB0256A548D0079B43E /* StoryboardInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstance.swift; sourceTree = "<group>"; };
+		17992C6F256A4FF500E01F5E /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 			children = (
 				170CB40C2568EE4400092C50 /* AppDelegate.swift */,
 				170CB40E2568EE4400092C50 /* SceneDelegate.swift */,
+				1731DBAC256A54410079B43E /* Common */,
 				170CB47C2569234500092C50 /* GlobalProtocols */,
 				170CB46A256907C300092C50 /* Extensions */,
 				170CB4622569053A00092C50 /* Persistence */,
@@ -157,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				170CB4102568EE4500092C50 /* PhotosViewController.swift */,
+				17992C6F256A4FF500E01F5E /* PhotoPreviewViewController.swift */,
 				170CB47525691C0600092C50 /* PhotoTableViewCell.swift */,
 			);
 			path = UI;
@@ -185,6 +193,15 @@
 				170CB4842569346400092C50 /* PhotoTableViewDataSource.swift */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		1731DBAC256A54410079B43E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1731DBAD256A547C0079B43E /* StoryboardName.swift */,
+				1731DBB0256A548D0079B43E /* StoryboardInstance.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,13 +283,16 @@
 				170CB42B2568F16600092C50 /* NetworkTaskManager.swift in Sources */,
 				170CB4352568F36700092C50 /* PhotosEndpoint.swift in Sources */,
 				170CB488256936D900092C50 /* UIViewController+Extension.swift in Sources */,
+				1731DBAE256A547C0079B43E /* StoryboardName.swift in Sources */,
 				170CB46C256907E700092C50 /* CodingUserInfoKey+Extension.swift in Sources */,
 				170CB4112568EE4500092C50 /* PhotosViewController.swift in Sources */,
 				170CB4812569255300092C50 /* PhotoListViewModel.swift in Sources */,
+				1731DBB1256A548D0079B43E /* StoryboardInstance.swift in Sources */,
 				170CB4852569346400092C50 /* PhotoTableViewDataSource.swift in Sources */,
 				170CB40D2568EE4400092C50 /* AppDelegate.swift in Sources */,
 				170CB4642569060300092C50 /* CoreDataStorage.swift in Sources */,
 				170CB47E2569237800092C50 /* ViewModelType.swift in Sources */,
+				17992C70256A4FF500E01F5E /* PhotoPreviewViewController.swift in Sources */,
 				170CB4172568EE4500092C50 /* typicode.xcdatamodeld in Sources */,
 				170CB4312568F1F900092C50 /* Result.swift in Sources */,
 				170CB40F2568EE4500092C50 /* SceneDelegate.swift in Sources */,
