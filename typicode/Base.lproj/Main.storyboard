@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VP2-IV-hjh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VP2-IV-hjh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -36,19 +36,16 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="GOa-Ly-5Sy">
                                                     <rect key="frame" x="155" y="11" width="204" height="128"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="128" id="TZW-VH-yzk"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="40"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cLC-CO-moC" firstAttribute="centerY" secondItem="GCl-kR-Jwf" secondAttribute="centerY" id="8p1-sa-WWM"/>
                                                 <constraint firstItem="GOa-Ly-5Sy" firstAttribute="top" secondItem="GCl-kR-Jwf" secondAttribute="top" constant="11" id="YA1-3t-pRh"/>
                                                 <constraint firstItem="GOa-Ly-5Sy" firstAttribute="leading" secondItem="cLC-CO-moC" secondAttribute="trailing" constant="11" id="bh6-2h-MuY"/>
                                                 <constraint firstItem="cLC-CO-moC" firstAttribute="leading" secondItem="GCl-kR-Jwf" secondAttribute="leadingMargin" id="lYZ-7F-fVi"/>
+                                                <constraint firstItem="cLC-CO-moC" firstAttribute="top" secondItem="GCl-kR-Jwf" secondAttribute="top" constant="11" id="pzC-OO-isf"/>
                                                 <constraint firstAttribute="trailing" secondItem="GOa-Ly-5Sy" secondAttribute="trailing" constant="16" id="tCf-Oe-4cr"/>
                                                 <constraint firstAttribute="bottom" secondItem="GOa-Ly-5Sy" secondAttribute="bottom" constant="11" id="tjZ-9D-O6v"/>
                                             </constraints>

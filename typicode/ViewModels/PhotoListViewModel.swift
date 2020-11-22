@@ -41,7 +41,6 @@ class PhotoListViewModel {
                 self.deleteOldObjects(photos: photos)
                 self.savePhotos(photos)
             case .failure(let error):
-                print(error.localizedDescription)
                 self.delegate?.parsePhotosFailedWithMessage(error.localizedDescription)
             }
         }

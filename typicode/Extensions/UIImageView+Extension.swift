@@ -15,7 +15,7 @@ extension UIImageView {
         guard let url = URL(string: imgURL) else { return nil }
 
         // set default initial image
-        image = UIImage(named: defaultImage)
+        image = defaultImage.isEmpty ? nil : UIImage(named: defaultImage)
 
         // check if the image is already in the cache
         if let imageToCache = imageCache.object(forKey: imgURL as NSString) {
@@ -26,7 +26,7 @@ extension UIImageView {
         // download the image asynchronously
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let err = error {
-                print(err)
+                print(err.localizedDescription)
                 return
             }
 

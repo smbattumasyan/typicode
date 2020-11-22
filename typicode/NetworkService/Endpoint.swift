@@ -35,7 +35,6 @@ extension Endpoint {
 }
 
 // MARK: - Helper
-
 private extension Endpoint {
     
     /** Helper factory to create `URLRequest` */
@@ -51,7 +50,6 @@ private extension Endpoint {
 }
 
 // MARK: - HTTP Method
-
 enum HTTPMethod {
     case get
     case patch

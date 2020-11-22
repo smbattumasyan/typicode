@@ -12,29 +12,30 @@ class PhotoTableViewCell: UITableViewCell {
     // MARK: - IBOutlets
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var typiImageView: UIImageView!
-    private var task: URLSessionDataTask?
     
+    // MARK: - Public properties
     static let id = "photoCellIdentifier"
+    
+    // MARK: - Private properties
+    private var task: URLSessionDataTask?
 
+    // MARK: - Life Circle
     override func awakeFromNib() {
         super.awakeFromNib()
         
         configureViews()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        // Need to cancel URLSessionDataTask for not loaded image.
+        /// During fast scrolling URLSessionDataTask preview previous cashed image.
         task?.cancel()
         task = nil
     }
     
+    // MARK: - Public Methods
     func setup(_ photo: PhotoViewModel.Output) {
         titleLabel.text = photo.title
         if task == nil {
@@ -42,6 +43,7 @@ class PhotoTableViewCell: UITableViewCell {
         }
     }
     
+    // MARK: - Private Methods
     private func configureViews() {
         typiImageView.layer.cornerRadius = UIConfig.typiCornerRadius
         typiImageView.clipsToBounds = true
