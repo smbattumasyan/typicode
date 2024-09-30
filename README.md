@@ -1,7 +1,6 @@
-MVVM iOS Project, without third party SDK. 
+MVVM iOS Project without third-party SDKs.
 
-The Application request and take information from local json-server and place in local Database (application can works offline). Contains native network layer and CoreData database. Shows the list in the table view, every cell contain a title and an image and when tap on cell previews original image. Using pagination to request and show first 20 items and then request and update items from CoreData with fetchedResultController when user scroll down to last cells.
-
+The application requests and retrieves information from a local JSON server and stores it in a local database (the application can function offline). It contains a native network layer and uses CoreData for the database. The app displays a list in a table view, where each cell contains a title and an image. When a cell is tapped, the original image is previewed. Pagination is used to request and display the first 20 items, with additional items being requested and updated in CoreData via a NSFetchedResultsController as the user scrolls to the last cells.
 
 Database json example.
 {
